@@ -1,3 +1,5 @@
+import { secretParagraph, secretButton } from "./dom-loader";
+
 var showSecret = false;
 
 secretButton.addEventListener("click", toggle);
@@ -21,7 +23,7 @@ function updateButton() {
 function updatePharagraph() {
   if (showSecret) {
     secretParagraph.style.border = "3px solid";
-    secretParagraph.style.height = "70px";
+    secretParagraph.style.height = "110px";
   } else {
     secretParagraph.style.border = "none";
     secretParagraph.style.height = "0";
