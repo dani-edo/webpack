@@ -1,6 +1,7 @@
 var path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { AngularWebpackPlugin } = require("@ngtools/webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/main.ts",
@@ -28,6 +29,9 @@ module.exports = {
       tsConfigPath: "./tsconfig.json",
       entryModule: path.join(__dirname, "src/app/app.module#AppModule"),
       sourceMap: true,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/assets", to: "assets" }],
     }),
   ],
 };
